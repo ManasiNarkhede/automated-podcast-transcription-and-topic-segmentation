@@ -33,7 +33,7 @@ A comprehensive Jupyter notebook covering project setup and data acquisition.
    - Download from [Kaggle - This American Life Podcast Transcript Dataset](https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset)
    - Dataset includes:
      - 30 podcast episodes
-     - ~6 GB of MP3 audio files
+     - ~6 GB of MP3 audio files(200 audios)
      - Reference transcripts (CSV format)
    - **Note**: Audio files stored separately due to size
 
