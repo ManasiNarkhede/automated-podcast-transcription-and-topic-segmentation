@@ -1,0 +1,15 @@
+﻿openai-whisper
+torch
+torchaudio
+librosa
+pydub
+noisereduce
+pyloudnorm
+soundfile
+jiwer
+pandas
+numpy
+matplotlib
+Scikit-learn
+tqdm
+spacy
