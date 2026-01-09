@@ -56,10 +56,10 @@ User Interface (Navigation, Search, Visualization)
 
 | Milestone | Weeks       | Notebooks Folder                        | Main Deliverables                                      |
 |-----------|-------------|-----------------------------------------|--------------------------------------------------------|
-| 1         | 1–2         | `week1_milestone1/`                     | Dataset acquisition, exploration, audio preprocessing |
-| 2         | 3–4         | `week2_milestone1/` & `week3_milestone2/` | Initial transcription (Whisper), topic segmentation algorithms |
-| 3         | 5–6         | `week4_milestone2/` & `week5_milestone3/` | Keyword extraction, summarization, visualizations     |
-| 4         | 7–8         | `week7-8_milestone4/`                   | UI development (Streamlit), documentation, presentation|
+| 1         | 1–2         | `week1_milestone/`                     | Dataset acquisition, exploration, audio preprocessing |
+| 2         | 3–4         | `week2_milestone/` & `week3_milestone/` | Initial transcription (Whisper), topic segmentation algorithms |
+| 3         | 5–6         | `week4_milestone/` & `week5_milestone/` | Keyword extraction, summarization, visualizations     |
+| 4         | 7–8         | `week7-8_milestone/`                   | UI development (Streamlit), documentation, presentation|
 
 ## Technologies Used
 
@@ -161,5 +161,5 @@ Audio Project/
 
 - Kaggle Dataset: https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset
 
-- Audio Source: https://www.thisamericanlife.org (public archive – legal for academic use)
+- Audio Source: https://www.thisamericanlife.org (public archive)
 
