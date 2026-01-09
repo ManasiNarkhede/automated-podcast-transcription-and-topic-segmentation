@@ -97,16 +97,16 @@ User Interface (Navigation, Search, Visualization)
 
 5. **Place files in Drive**:
 
-   - Raw MP3s: `/content/drive/MyDrive/podcast_project/audio_raw/`
+   - Raw MP3s: `/content/drive/MyDrive/podcast-project/data/audio_raw`
 
-   - Transcripts: `/content/drive/MyDrive/podcast_project/transcripts/`
+   - Transcripts: `/content/drive/MyDrive/podcast-project/data/transcripts_processed`
 
-   - Processed audio: `/content/drive/MyDrive/podcast_project/audio_processed/`
+   - Processed audio: `/content/drive/MyDrive/podcast-project/data/audio_processed/`
 
 ## Project Structure
 
 ```
-Audio Project/
+podcast-project/
 ├── README.md
 ├── requirements.txt
 ├── data/
