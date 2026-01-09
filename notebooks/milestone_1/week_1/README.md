@@ -32,8 +32,7 @@ A comprehensive Jupyter notebook covering project setup and data acquisition.
 2. **Dataset Acquisition**
    - Download from [Kaggle - This American Life Podcast Transcript Dataset](https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset)
    - Dataset includes:
-     - 30 podcast episodes
-     - ~6 GB of MP3 audio files(200 audios)
+     - 600 podcast episode transcripts
      - Reference transcripts (CSV format)
    - **Note**: Audio files stored separately due to size
 
@@ -63,16 +62,16 @@ A comprehensive Jupyter notebook covering project setup and data acquisition.
 ## Data Acquired
 
 ### Raw Transcripts
-- **Source**: Kaggle dataset download
+- **Source**: Kaggle dataset 
 - **Format**: CSV (Comma-Separated Values)
-- **Coverage**: 30 complete podcast episodes
+- **Coverage**: 600 complete podcast episodes
 - **Location**: `data/transcripts_raw/`
 
 ### Audio Files
-- **Source**: Kaggle dataset download
+- **Source**: [This American Life](https://www.thisamericanlife.org/archive)
 - **Format**: MP3
-- **Total Size**: ~6 GB
-- **Episodes**: 30 numbered audio files
+- **Total Size**: ~6 GB(for 200 mp3 files)
+- **Episodes**: 200 numbered audio files
 - **Location**: `data/audio_raw/`
 - **Storage**: Stored locally due to size; not committed to Git
 
@@ -159,7 +158,7 @@ data/
 │   ├── lines_clean_200.csv (NEW - sample)
 │   └── episode_info_clean_200.csv (NEW - sample)
 └── audio_raw/
-    └── episode_{1-30}.mp3 (full audio files)
+    └── episode_{1-200}.mp3 (full audio files)
 ```
 
 ---
@@ -177,7 +176,7 @@ After Week 1 completion:
 2. **Week 2 - Speech-to-Text**
    - Run Whisper ASR on audio chunks
    - Generate JSON transcriptions
-   - Process all 30 episodes
+   - Process all 200 episodes
 
 3. **Week 2 - Quality Evaluation**
    - Compare Whisper output against reference transcripts
