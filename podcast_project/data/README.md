@@ -8,7 +8,7 @@ This directory contains all data assets for the Automated Podcast Transcription 
 **Purpose**: Storage location for raw, unprocessed podcast audio files.
 
 - **Contents**: Original MP3 files downloaded from the Kaggle dataset
-- **Size**: Large files (~6 GB total)
+- **Size**: Large files
 - **Source**: [This American Life Episodes](https://www.thisamericanlife.org/archive)
 - **Use Case**: Input source for audio preprocessing and speech-to-text conversion
 
