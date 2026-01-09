@@ -9,7 +9,7 @@ This directory contains all data assets for the Automated Podcast Transcription 
 
 - **Contents**: Original MP3 files downloaded from the Kaggle dataset
 - **Size**: Large files (~6 GB total)
-- **Source**: [This American Life Podcast Transcript Dataset](https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset)
+- **Source**: [This American Life Episodes](https://www.thisamericanlife.org/archive)
 - **Use Case**: Input source for audio preprocessing and speech-to-text conversion
 
 ---
@@ -57,6 +57,7 @@ This directory contains all data assets for the Automated Podcast Transcription 
   - `episode_id`: Unique episode identifier
   - `line_text`: Spoken text from the transcript
   - Additional metadata fields
+- **Source**: [This American Life Podcast Transcript Dataset](https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset)
 - **Use Case**: Ground truth reference for transcript quality evaluation and WER (Word Error Rate) calculation
 
 ---
