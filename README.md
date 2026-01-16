@@ -56,7 +56,7 @@ flowchart TD
 |-----------|-------------|-----------------------------------------|--------------------------------------------------------|
 | 1         | 1–2         | `milestone_1/`                     | Dataset acquisition, exploration, audio preprocessing |
 | 2         | 3–4         | `milestone_2/` | Initial transcription (Whisper), topic segmentation algorithms |
-| 3         | 5–6         | `milestone_3/` & `week5_milestone/` | Keyword extraction, summarization, visualizations     |
+| 3         | 5–6         | `milestone_3/`  | Keyword extraction, summarization, visualizations     |
 | 4         | 7–8         | `milestone_4/`                   | UI development (Streamlit), documentation, presentation|
 
 ## Technologies Used
