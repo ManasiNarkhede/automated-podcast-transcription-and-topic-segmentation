@@ -52,7 +52,7 @@ This directory contains all data assets for the Automated Podcast Transcription 
   - `lines_clean.csv` - Individual transcript lines with metadata
   - `episode_info_clean.csv` - Episode-level metadata
 - **Format**: CSV (Comma-Separated Values)
-- **Rows**: Full dataset (~30 episodes)
+- **Rows**: Full dataset (~600 episodes)
 - **Columns** (lines_clean.csv):
   - `episode_id`: Unique episode identifier
   - `line_text`: Spoken text from the transcript
@@ -121,7 +121,7 @@ Quality Metrics (WER, accuracy)
 | Metric | Value |
 |--------|-------|
 | **Dataset Source** | Kaggle - This American Life |
-| **Number of Episodes** | 30 |
+| **Number of Episodes** | 200 |
 | **Total Audio Size** | ~6 GB |
 | **Audio Format** | MP3 (original), WAV (processed) |
 | **Sample Rate** | 16 kHz |

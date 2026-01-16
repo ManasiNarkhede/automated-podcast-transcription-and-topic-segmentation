@@ -249,13 +249,13 @@ data/audio_raw/
 
 ### Runtime Estimates
 
-- **Full Dataset (30 episodes)**:
+- **Full Dataset (600 episodes)**:
   - Preprocessing: 30-60 minutes
   - Whisper ASR: 2-4 hours (GPU) / 6-12 hours (CPU)
   - Quality Evaluation: 2-5 minutes
   - **Total: 3-16 hours** (depending on hardware)
 
-- **Truncated Dataset (200 rows, ~5 episodes)**:
+- **Truncated Dataset (200 episodes)**:
   - Preprocessing: 5-10 minutes
   - Whisper ASR: 20-40 minutes (GPU) / 1-2 hours (CPU)
   - Quality Evaluation: 30 seconds

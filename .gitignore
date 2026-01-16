@@ -50,6 +50,7 @@ MANIFEST
 Thumbs.db
 
 # Environment Variables
+data/env
 .env
 .env.local
 .env.*.local
