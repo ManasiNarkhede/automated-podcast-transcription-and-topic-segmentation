@@ -204,28 +204,25 @@ Where:
 
 ## Processing Pipeline Architecture
 
-```
-WEEK 2 DATA FLOW:
-
-data/audio_raw/
-    ↓
-    ├─ MP3 → WAV conversion
-    ├─ Noise reduction (noisereduce)
-    ├─ Loudness normalization (-14 LUFS)
-    ├─ Silence trimming
-    └─→ data/audio_processed/
-        ↓
-        ├─ 30-second chunking
-        └─→ data/audio_tmp/
-            ↓
-            ├─ Whisper ASR (OpenAI Whisper)
-            └─→ data/transcripts_processed/
-                ├─ JSON output files
-                └─→ Quality Evaluation
-                    ├─ Load reference (transcripts_raw/)
-                    ├─ Normalize texts
-                    ├─ Calculate WER
-                    └─→ Metrics & Reports
+```mermaid
+flowchart TD
+    A[data/audio_raw/] --> B[MP3 → WAV conversion]
+    B --> C[Noise reduction<br/>noisereduce]
+    C --> D[Loudness normalization<br/>-14 LUFS]
+    D --> E[Silence trimming]
+    E --> F[data/audio_processed/]
+    F --> G[30-second chunking]
+    G --> H[data/audio_tmp/]
+    H --> I[Whisper ASR<br/>OpenAI Whisper]
+    I --> J[data/transcripts_processed/]
+    J --> K[JSON output files]
+    K --> L[Quality Evaluation]
+    L --> M[Load reference<br/>transcripts_raw/]
+    L --> N[Normalize texts]
+    L --> O[Calculate WER]
+    M --> P[Metrics & Reports]
+    N --> P
+    O --> P
 ```
 
 ---
