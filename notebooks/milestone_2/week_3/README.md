@@ -52,53 +52,70 @@ The key goals are:
 
 ## Methodology – Week 3 Workflow
 
-Week 2 Output
-(JSON Transcripts: episode_X_whisper.json)
-            |
-            v
-Transcript Preparation
-(Extract text + timestamps)
-            |
-            v
-Sentence Segmentation
-(nltk.sent_tokenize)
-            |
-            v
--------------------------------------------------
-| Topic Segmentation Approaches                 |
-|                                               |
-|  Algorithm 1: Baseline                         |
-|  - TF-IDF + Cosine Similarity                  |
-|  - Consecutive sentence comparison             |
-|                                               |
-|  Algorithm 2: Embedding-based (Selected)       |
-|  - Sentence-Transformers (all-MiniLM-L6-v2)    |
-|  - Windowed semantic similarity                |
-|                                               |
-|  Algorithm 3: LLM-based (Comparison only)      |
-|  - OpenRouter API                              |
-|  - Zero-shot topic boundary detection          |
--------------------------------------------------
-            |
-            v
-Comparison & Qualitative Evaluation
-(Coherence, natural boundaries)
-            |
-            v
-Finalize Topic Segments
-(Select embedding-based method)
-            |
-            v
-Keyword Extraction
-(TF-IDF per segment, stopword removal)
-            |
-            v
-Initial Summarization
-(BART-large-cnn, 1–2 sentences per segment)
-            |
-            v
-Final Output
-(Segmented JSON: episode_X_segment.json)
+┌──────────────────────────────────────────────────────────┐
+│                     Week 2 Output                         │
+│        JSON Transcripts (episode_X_whisper.json)          │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                 Transcript Preparation                    │
+│             Extract text and timestamps                   │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                 Sentence Segmentation                     │
+│                   nltk.sent_tokenize                      │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                Topic Segmentation Methods                 │
+│                                                          │
+│  Algorithm 1: Baseline (Mandatory)                        │
+│   • TF-IDF + Cosine Similarity                            │
+│   • Consecutive sentence comparison                      │
+│                                                          │
+│  Algorithm 2: Embedding-based (Selected)                  │
+│   • Sentence-Transformers (all-MiniLM-L6-v2)              │
+│   • Windowed semantic similarity                          │
+│                                                          │
+│  Algorithm 3: LLM-based (Comparison Only)                 │
+│   • OpenRouter API                                        │
+│   • Zero-shot topic boundary detection                    │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│          Comparison & Qualitative Evaluation               │
+│        Coherence, semantic consistency, boundaries         │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│              Finalize Topic Segments                       │
+│        Select embedding-based segmentation                 │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                  Keyword Extraction                       │
+│     TF-IDF per segment, stopword removal                  │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                 Initial Summarization                     │
+│        BART-large-cnn (1–2 sentences per segment)          │
+└──────────────────────────────────────────────────────────┘
+                             │
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│                     Final Output                          │
+│      Segmented JSON (episode_X_segment.json)               │
+└──────────────────────────────────────────────────────────┘
+
 
 # Step-by-Step Implementation: Topic Segmentation, Keyword Extraction, and Summarization
 

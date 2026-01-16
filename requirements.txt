@@ -1,4 +1,11 @@
-﻿openai-whisper
+﻿
+# Week 1 – Environment & Data Handling
+pandas
+numpy
+tqdm
+
+# Week 2 – Audio Processing & Transcription
+openai-whisper
 torch
 torchaudio
 librosa
@@ -7,9 +14,15 @@ noisereduce
 pyloudnorm
 soundfile
 jiwer
-pandas
-numpy
-matplotlib
-Scikit-learn
-tqdm
+
+# Week 3 – NLP & Segmentation
+scikit-learn
+sentence-transformers
+transformers
+nltk
 spacy
+python-dotenv
+openai                # OpenAI-compatible client (used for OpenRouter)
+
+# Visualization & Utilities
+matplotlib
