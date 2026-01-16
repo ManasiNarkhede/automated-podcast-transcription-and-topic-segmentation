@@ -52,32 +52,21 @@ The key goals are:
 
 ## Methodology – Week 3 Workflow
 
-Week 2 Transcripts (JSON)
-        |
-        v
-Transcript Preparation
-        |
-        v
-Sentence Segmentation
-        |
-        v
-Topic Segmentation
-  - TF-IDF (baseline)
-  - Embedding-based (selected)
-  - LLM-based (comparison)
-        |
-        v
-Evaluation & Selection
-        |
-        v
-Keyword Extraction
-        |
-        v
-Summarization
-        |
-        v
-Final Output
-(Segmented JSON)
+```mermaid
+flowchart TD
+    A[Week 2 Transcripts JSON] --> B[Transcript Preparation]
+    B --> C[Sentence Segmentation]
+    C --> D[Topic Segmentation]
+    D --> D1[TF-IDF baseline]
+    D --> D2[Embedding-based selected]
+    D --> D3[LLM-based comparison]
+    D1 --> E[Evaluation & Selection]
+    D2 --> E
+    D3 --> E
+    E --> F[Keyword Extraction]
+    F --> G[Summarization]
+    G --> H[Final Output<br/>Segmented JSON]
+```
 
 
 # Step-by-Step Implementation: Topic Segmentation, Keyword Extraction, and Summarization
