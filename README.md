@@ -22,18 +22,16 @@ Leveraging advances in speech-to-text technology (ASR) and natural language proc
 
 ### Model Architecture
 
-```
-Podcast Audio
-      ↓
-User Interface (Web App) ──→ Backend REST API
-      ↓
-Audio Preprocessing & Speech-to-Text Model (Whisper)
-      ↓
-Topic Segmentation & Summarization (NLP)
-      ↓
-Segmented Transcript & Topics
-      ↓
-User Interface (Navigation, Search, Visualization)
+```mermaid
+flowchart TD
+    A[Podcast Audio Files] --> B[Audio Preprocessing]
+    B --> C[Speech-to-Text<br/>OpenAI Whisper]
+    C --> D[Transcript Quality<br/>Evaluation]
+    D --> E[Topic Segmentation<br/>NLP Algorithms]
+    E --> F[Keyword Extraction<br/>TF-IDF]
+    F --> G[Summarization<br/>BART Model]
+    G --> H[Segmented Transcripts<br/>with Topics & Summaries]
+    H --> I[User Interface<br/>Navigation & Search]
 ```
 
 ## Dataset
@@ -56,106 +54,110 @@ User Interface (Navigation, Search, Visualization)
 
 | Milestone | Weeks       | Notebooks Folder                        | Main Deliverables                                      |
 |-----------|-------------|-----------------------------------------|--------------------------------------------------------|
-| 1         | 1–2         | `week1_milestone/`                     | Dataset acquisition, exploration, audio preprocessing |
-| 2         | 3–4         | `week2_milestone/` & `week3_milestone/` | Initial transcription (Whisper), topic segmentation algorithms |
-| 3         | 5–6         | `week4_milestone/` & `week5_milestone/` | Keyword extraction, summarization, visualizations     |
-| 4         | 7–8         | `week7-8_milestone/`                   | UI development (Streamlit), documentation, presentation|
+| 1         | 1–2         | `milestone_1/`                     | Dataset acquisition, exploration, audio preprocessing |
+| 2         | 3–4         | `milestone_2/` | Initial transcription (Whisper), topic segmentation algorithms |
+| 3         | 5–6         | `milestone_3/` & `week5_milestone/` | Keyword extraction, summarization, visualizations     |
+| 4         | 7–8         | `milestone_4/`                   | UI development (Streamlit), documentation, presentation|
 
 ## Technologies Used
 
-- **Environment**: Google Colab (GPU runtime recommended for Whisper)
+- **Environment**: Python 3.8+ (VS Code + local development)
+- **Audio Processing**: librosa, pydub, soundfile, pyloudnorm, noisereduce
+- **Speech-to-Text**: OpenAI Whisper (tiny/base models)
+- **NLP & Segmentation**: nltk, sentence-transformers, scikit-learn, transformers
+- **Evaluation**: jiwer (Word Error Rate)
+- **Visualization**: matplotlib, plotly (planned)
+- **UI Framework**: Streamlit (planned for web interface)
 
-- **Audio Processing**: librosa, pydub, soundfile, pyloudnorm
+## Setup Instructions
 
-- **Speech-to-Text**: OpenAI Whisper (base/small/medium models)
+1. **Clone Repository** (if applicable) or ensure you have the project files
 
-- **NLP & Segmentation**: pandas, scikit-learn, spaCy, sentence-transformers
-
-- **Visualization & UI**: matplotlib, plotly, Streamlit (planned)
-
-- **Python Version**: 3.10+
-
-## Setup Instructions (Colab)
-
-1. **Open Google Colab** → Create new notebook
-
-2. **Mount Google Drive** (recommended – to store audio & processed files)
-
-   ```python
-   from google.colab import drive
-   drive.mount('/content/drive')
-   ```
-
-3. **Install dependencies** (run in first cell):
-
+2. **Create Python Environment**:
    ```bash
-   !pip install -q pydub librosa soundfile pyloudnorm openai-whisper torch torchaudio pandas tqdm scikit-learn spacy sentence-transformers streamlit
-   !python -m spacy download en_core_web_sm
+   python -m venv audio_project_env
+   # Activate: audio_project_env\Scripts\activate (Windows) or source audio_project_env/bin/activate (Linux/Mac)
    ```
 
-4. **Change runtime type** → GPU (T4 or better if available)
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-5. **Place files in Drive**:
+4. **GPU Setup** (optional, recommended for faster Whisper processing):
+   - Install CUDA 11.8+ if you have an NVIDIA GPU
+   - PyTorch will automatically detect and use GPU acceleration
 
-   - Raw MP3s: `/content/drive/MyDrive/podcast-project/data/audio_raw`
+5. **Verify Installation**:
+   ```python
+   import whisper
+   import librosa
+   print("Setup complete!")
+   ```
 
-   - Transcripts: `/content/drive/MyDrive/podcast-project/data/transcripts_processed`
-
-   - Processed audio: `/content/drive/MyDrive/podcast-project/data/audio_processed/`
+6. **File Organization**:
+   - Raw audio: `data/audio_raw/`
+   - Processed audio: `data/audio_processed/`
+   - Transcripts: `data/transcripts_processed/`
+   - Notebooks: `notebooks/` directory
 
 ## Project Structure
 
 ```
-podcast-project/
+Audio Project/
 ├── README.md
 ├── requirements.txt
 ├── data/
 │   ├── README.md
-│   ├── audio_processed/          (Preprocessed audio files)
+│   ├── audio_processed/          (Preprocessed WAV files)
 │   ├── audio_raw/                (Original podcast MP3s)
-│   ├── audio_tmp/                (Temporary audio processing files)
-│   ├── transcripts_processed/
-│   │   ├── episode_1_whisper.json
-│   │   ├── episode_2_whisper.json
-│   │   └── ... (30 episodes)
-│   ├── transcripts_raw/
-│   │   ├── episode_info_clean.csv
-│   │   └── lines_clean.csv
-│   └── transcripts_raw_truncated/
-│       ├── episode_info_clean_200.csv
-│       └── lines_clean_200.csv
+│   ├── audio_tmp/                (Temporary audio chunks)
+│   ├── segmented_outputs/        (Topic-segmented transcripts)
+│   ├── transcripts_processed/    (Whisper-generated transcripts)
+│   ├── transcripts_raw/          (Reference transcripts)
+│   └── transcripts_raw_truncated/ (200-episode subset)
 └── notebooks/
-    └── milestone_1/
-        ├── week_1/
-        │   ├── project_init_and_dataset_acquisition.ipynb
-        │   └── README.md
-        └── week_2/
-            ├── audio_preprocessing_and_speech_to_text.ipynb
-            ├── transcript_quality_evaluation.ipynb
+    ├── milestone_1/
+    │   ├── week_1/
+    │   │   ├── project_init_and_dataset_acquisition.ipynb
+    │   │   └── README.md
+    │   └── week_2/
+    │       ├── audio_preprocessing_and_speech_to_text.ipynb
+    │       ├── transcript_quality_evaluation.ipynb
+    │       └── README.md
+    └── milestone_2/
+        └── week_3/
+            ├── topic_segmentation_keyword_extraction_summarization.ipynb
             └── README.md
 ```
 
 ## Current Status 
 
+✅ **Completed:**
 - Dataset acquired: 200 episodes (transcripts + audio)
+- Environment setup completed (Python environment with GPU support)
+- Week 1: Project initialization and dataset acquisition
+- Week 2: Audio preprocessing pipeline and Whisper transcription
+- Week 3: Topic segmentation, keyword extraction, and summarization
 
-- Environment setup completed in Colab (GPU)
+🔄 **In Progress:**
+- Pipeline optimization and evaluation
+- User interface development (Streamlit planned)
 
-- Week 1 & Week 2 notebooks updated (exploration & preprocessing)
-
-- Whisper transcription tested on subset
+📋 **Key Achievements:**
+- Full audio preprocessing pipeline (noise reduction, normalization, chunking)
+- Whisper ASR integration with quality evaluation (WER metrics)
+- Multi-algorithm topic segmentation (TF-IDF, embeddings, LLM-based)
+- Automated keyword extraction and BART summarization
+- Comprehensive documentation with visual flowcharts
 
 ## Future Work
 
-- Automate full pipeline
-
-- Advanced segmentation (BERT embeddings + speaker cues + TextTiling)
-
-- Streamlit web interface for interactive navigation & search
-
-- Comprehensive evaluation (Word Error Rate, segmentation precision/recall)
-
-- Final presentation & documentation
+- **Pipeline Optimization**: Performance tuning and batch processing
+- **Advanced Evaluation**: Segmentation precision/recall metrics, user studies
+- **Web Interface**: Streamlit app for interactive podcast navigation
+- **API Development**: REST endpoints for integration
+- **Documentation**: Final presentation and technical write-up
 
 ## References
 
