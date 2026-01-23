@@ -1,29 +1,31 @@
-# Week 2: Audio Preprocessing and Speech-to-Text with Quality Evaluation
+# 🎵 Week 2: Audio Preprocessing and Speech-to-Text with Quality Evaluation
 
-## Overview
+> *Converting podcast audio to text with AI-powered speech recognition*
 
-Week 2 comprises the core technical pipeline: processing raw audio files, performing automatic speech recognition (ASR) using OpenAI Whisper, and evaluating transcription quality through comparative analysis against reference transcripts.
+## 📋 Overview
 
----
-
-## Objectives
-
-- ✅ Preprocess raw audio files (noise reduction, normalization)
-- ✅ Convert audio format and standardize sample rate
-- ✅ Implement audio chunking for efficient processing
-- ✅ Execute speech-to-text using OpenAI Whisper ASR
-- ✅ Generate quality metrics (Word Error Rate - WER)
-- ✅ Compare Whisper output against reference transcripts
+**Week 2** implements the core technical pipeline: processing raw audio files, performing automatic speech recognition (ASR) using OpenAI Whisper, and evaluating transcription quality through comparative analysis against reference transcripts.
 
 ---
 
-## Contents
+## 🎯 Objectives
+
+- ✅ **Audio Processing**: Preprocess raw files (noise reduction, normalization)
+- ✅ **Format Conversion**: Convert audio and standardize parameters
+- ✅ **Chunking**: Implement efficient audio segmentation
+- ✅ **Speech-to-Text**: Execute ASR using OpenAI Whisper
+- ✅ **Quality Metrics**: Generate Word Error Rate (WER) scores
+- ✅ **Evaluation**: Compare Whisper output against reference transcripts
+
+---
+
+## 📁 Contents
 
 ### 1. `audio_preprocessing_and_speech_to_text.ipynb`
 
 Comprehensive audio processing and ASR pipeline for converting podcast audio to high-quality transcriptions.
 
-#### Key Sections:
+#### 🔧 Key Sections:
 
 ##### **Dependency Installation**
 - Install required Python packages from `requirements.txt`
@@ -47,7 +49,7 @@ Comprehensive audio processing and ASR pipeline for converting podcast audio to 
 - Configure device acceleration (GPU if available, else CPU)
 - Initialize model for inference
 
-#### Audio Preprocessing Pipeline
+#### 🎚️ Audio Preprocessing Pipeline
 
 The preprocessing function `preprocess_and_chunk()` performs:
 
@@ -76,7 +78,7 @@ The preprocessing function `preprocess_and_chunk()` performs:
    - Prevents memory overload during ASR
    - Maintains speech continuity at chunk boundaries
 
-#### Processing Parameters
+#### ⚙️ Processing Parameters
 
 | Parameter | Value | Purpose |
 |-----------|-------|---------|
@@ -88,7 +90,7 @@ The preprocessing function `preprocess_and_chunk()` performs:
 | **Silence Threshold** | -40 dB | Room noise level |
 | **Target Loudness** | -14 LUFS | Podcast standard |
 
-#### Output Structure
+#### 📤 Output Structure
 
 ```
 audio_tmp/
@@ -115,7 +117,7 @@ transcripts_processed/
 
 Comprehensive quality assessment of Whisper-generated transcriptions against reference transcripts.
 
-#### Key Sections:
+#### 🔍 Key Sections:
 
 ##### **Imports & Dependencies**
 - `jiwer` - WER (Word Error Rate) calculation
@@ -168,7 +170,7 @@ Where:
 - Whisper word count
 - Difference analysis (over/under-transcription)
 
-#### Evaluation Workflow
+#### 🔄 Evaluation Workflow
 
 1. **Load Reference Transcripts**
    - Read from `transcripts_raw_truncated/lines_clean_200.csv`
@@ -192,7 +194,7 @@ Where:
    - Reference word count
    - Whisper word count
 
-#### Example Output
+#### 📊 Example Output
 
 | Episode | WER | Ref Words | Whisper Words | Status |
 |---------|-----|-----------|---------------|--------|
@@ -202,7 +204,7 @@ Where:
 
 ---
 
-## Processing Pipeline Architecture
+## 🔧 Processing Pipeline Architecture
 
 ```mermaid
 flowchart TD
@@ -227,9 +229,9 @@ flowchart TD
 
 ---
 
-## System Requirements
+## 💻 System Requirements
 
-### Hardware
+### 🖥️ Hardware
 
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
@@ -238,13 +240,13 @@ flowchart TD
 | **GPU** | Optional | NVIDIA CUDA 11.8+ |
 | **CPU Cores** | 4 | 8+ |
 
-### Software
+### 🔧 Software
 
 - Python 3.8+
 - CUDA 11.8+ (optional, for GPU acceleration)
 - Dependencies from `requirements.txt`
 
-### Runtime Estimates
+### ⏱️ Runtime Estimates
 
 - **Full Dataset (600 episodes)**:
   - Preprocessing: 30-60 minutes
@@ -260,16 +262,16 @@ flowchart TD
 
 ---
 
-## Key Technologies
+## 🛠️ Key Technologies
 
-### OpenAI Whisper
+### 🤖 OpenAI Whisper
 - **Model**: Transformer-based ASR
 - **Language**: English
 - **Size**: "tiny" model (39M parameters) for efficiency
 - **Accuracy**: State-of-the-art on multiple benchmarks
 - **Speed**: Real-time inference with GPU
 
-### Audio Processing Libraries
+### 🎵 Audio Processing Libraries
 
 | Library | Purpose |
 |---------|---------|
@@ -279,7 +281,7 @@ flowchart TD
 | `noisereduce` | Spectral gating noise reduction |
 | `pyloudnorm` | ITU R.128 loudness normalization |
 
-### Quality Metrics
+### 📊 Quality Metrics
 
 | Metric | Library | Use Case |
 |--------|---------|----------|
@@ -288,7 +290,7 @@ flowchart TD
 
 ---
 
-## Data Files Generated
+## 📁 Data Files Generated
 
 ### Outputs from Audio Preprocessing Notebook
 
@@ -313,7 +315,7 @@ data/transcripts_processed/
 
 ---
 
-## Configuration Parameters
+## ⚙️ Configuration Parameters
 
 ### Audio Preprocessing
 
@@ -343,7 +345,7 @@ silence_thresh = -40    # Silence detection threshold (dB)
 
 ---
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 ### GPU Not Detected
 ```python
@@ -370,7 +372,7 @@ print(torch.cuda.get_device_name(0))
 
 ---
 
-## Next Steps
+## ➡️ Next Steps
 
 After Week 2 completion:
 
@@ -395,7 +397,7 @@ After Week 2 completion:
 
 ---
 
-## References
+## 📚 References
 
 ### Audio Processing
 - Loudness Standard: ITU-R BS.1770-4 (https://www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1770-4-201510-I!!PDF-E.pdf)
@@ -411,7 +413,7 @@ After Week 2 completion:
 
 ---
 
-## File Manifest
+## 📋 File Manifest
 
 | Notebook | Purpose | Output |
 |----------|---------|--------|
@@ -420,7 +422,7 @@ After Week 2 completion:
 
 ---
 
-## Author Notes
+## 📝 Author Notes
 
 Week 2 represents the most computationally intensive portion of the pipeline. Plan accordingly:
 
@@ -432,7 +434,7 @@ Week 2 represents the most computationally intensive portion of the pipeline. Pl
 
 ---
 
-## Version Information
+## 🔖 Version Information
 
 - **Whisper Model**: OpenAI Whisper (latest)
 - **Python**: 3.8+
