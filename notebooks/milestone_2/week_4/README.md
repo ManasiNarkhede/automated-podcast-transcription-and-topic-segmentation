@@ -1,35 +1,79 @@
-# Week 4: Podcast Navigation App
+# 🎧 Week 4: Podcast Navigation App
 
-## Overview
+> *Navigate podcast content effortlessly with AI-powered topic segmentation*
 
-In Week 4, we built a Streamlit web app called "Podcast Topic Navigator" that lets users easily navigate podcast content using automatically segmented topics from previous weeks' work.
+## 📋 Overview
 
-## Key Features
+In **Week 4**, we developed an interactive **Streamlit web application** that transforms segmented podcast transcripts into an intuitive navigation experience. The app leverages the topic segmentation work from previous weeks to allow users to search and browse podcast content by meaningful topics rather than scrolling through long transcripts.
 
-- **Search Mode**: Find segments across all episodes by keywords or summaries
-- **Browse Mode**: Select episodes and jump to specific topic segments
-- **Segment Details**: View summaries, keywords, and transcript previews
-- **Audio Playback**: Listen to audio clips for each segment
+## ✨ Key Features
 
-## Screenshots
+| Feature | Description |
+|---------|-------------|
+| 🔍 **Search Mode** | Global search across all episodes by keywords or topic summaries |
+| 📂 **Browse Mode** | Episode-by-episode navigation with segment selection |
+| 📝 **Segment Details** | Rich display of summaries, keywords, and highlighted transcripts |
+| 🎵 **Audio Playback** | Integrated audio player for seamless listening experience |
+| 📊 **Progress Tracking** | Visual indicators showing segment position within episodes |
+
+## 🖼️ Screenshots
 
 ### Main Interface
-![Main Interface](notebooks/milestone_2/week_4/screenshots/main_interface.png)
+![Main Interface](screenshots/main_interface.png)
+*The welcoming interface with navigation options*
 
 ### Search Topics
-![Search Topics](notebooks/milestone_2/week_4/screenshots/search_topics.png)
+![Search Topics](screenshots/search_topics.png)
+*Powerful search functionality across all podcast segments*
 
 ### Browse Episodes
-![Browse Episodes](notebooks/milestone_2/week_4/screenshots/browse_episodes.png)
+![Browse Episodes](screenshots/browse_episodes.png)
+*Episode selection and segment browsing interface*
 
 ### App Theme
-![App Theme](notebooks/milestone_2/week_4/screenshots/app_theme.png)
+![App Theme](screenshots/app_theme.png)
+*Clean, modern design optimized for podcast exploration*
 
-## Demo Video
+## 🎥 Demo Video
 
-Watch the demo: [App Demo Video](https://drive.google.com/file/d/1CXpFfdLsh7aSGMGS2aZerORcdO16QZdz/view?usp=sharing)
+🎬 **Watch the full demo**: [Podcast Navigator App Demo](https://drive.google.com/file/d/1CXpFfdLsh7aSGMGS2aZerORcdO16QZdz/view?usp=sharing)
 
-## Usage
+*See the app in action with real podcast data!*
 
-Run the app with: `streamlit run data/app/podcast_navigation_app.py`
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- Streamlit
+- Pandas
+
+### Installation
+```bash
+pip install streamlit pandas
+```
+
+### Running the App
+```bash
+streamlit run ../../../data/app/podcast_navigation_app.py
+```
+
+### Data Setup
+- Place segmented JSON files in `../../../data/segmented_outputs/`
+- Add audio files to `../../../data/audio_raw/` (optional)
+
+## 🏗️ Architecture Highlights
+
+- **Data Processing**: Efficient loading of segmented transcript data
+- **UI Framework**: Streamlit for responsive web interface
+- **Search Engine**: Real-time filtering and keyword matching
+- **Audio Integration**: Direct playback from processed audio files
+
+## 🎯 What We Accomplished
+
+✅ Built a fully functional podcast navigation application  
+✅ Implemented dual navigation modes (search & browse)  
+✅ Integrated audio playback capabilities  
+✅ Created an attractive, user-friendly interface  
+✅ Documented the development process with screenshots and demo
+
 
