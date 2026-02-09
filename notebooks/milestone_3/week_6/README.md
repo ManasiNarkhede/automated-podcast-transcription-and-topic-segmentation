@@ -1,6 +1,5 @@
 # 🎙️ Week 6: System Testing & Feedback Collection
 
-> **Mission**: Validate the complete podcast-processing system through comprehensive testing, collect structured user feedback, and identify high-impact improvements for final deployment.
 
 ---
 
@@ -86,6 +85,9 @@ streamlit run data/app/testing_app.py
 ## 📸 Screenshots
 
 Screenshots from Week 6 testing and UI are located in `notebooks/milestone_3/week_6/screenshots/`:
+
+### Dark Mode UI
+![Dark Mode](screenshots/dark_mode.png)
 
 ### QA Dashboard Overview
 ![Dashboard](screenshots/dashboard.png)

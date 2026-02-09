@@ -54,106 +54,95 @@ st.set_page_config(
 if "page" not in st.session_state:
     st.session_state.page = "home"
 
+
+# Dark mode toggle + system preference detection
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = False
+
+# Sidebar toggle for dark mode
+with st.sidebar:
+    st.markdown("### Display Settings")
+    st.session_state.dark_mode = st.checkbox(
+        "Dark Mode",
+        value=st.session_state.dark_mode,
+        help="Toggle dark mode for better visibility"
+    )
+
+# Apply theme
+theme = "dark" if st.session_state.dark_mode else "light"
+
 # Custom CSS
-st.markdown("""
+st.markdown(f"""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-    * {
+    * {{
         font-family: 'Inter', sans-serif !important;
-    }
+    }}
 
-    /* Default app background */
-    .stApp {
-        background-color: #f9fafb;
-    }
+    /* Root app container */
+    [data-testid="stAppViewContainer"] {{
+        background-color: {'#0f172a' if theme == 'dark' else '#f9fafb'};
+        color: {'#e2e8f0' if theme == 'dark' else '#1e293b'};
+    }}
 
-    .main .block-container {
+    .main .block-container {{
         padding-top: 2.5rem !important;
         padding-bottom: 4rem !important;
         max-width: 1400px !important;
-    }
+    }}
 
-    /* Home page background layer  */
-    .home-background {
-        position: fixed;
-        inset: 0;
-        z-index: -2;
-        
-    }
-
-    /* Home page content wrapper */
-    .home-container {
-        position: relative;
-        z-index: 1;
-        min-height: 100vh;
-    }
-
-    /* Semi-transparent cards on Home page */
-    .home-card {
-        background: rgba(255, 255, 255, 0.88) !important;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-        margin-bottom: 2rem;
-        color: #1e293b;
-    }
-
-    .home-card h3 {
-        color: #111827;
-    }
-
-    /* Hero (used on Home) */
-    .hero {
-        background: linear-gradient(135deg, rgba(79,70,229,0.9), rgba(124,58,237,0.9));
+    /* Hero */
+    .hero {{
+        background: linear-gradient(135deg, {'#4f46e5' if theme == 'light' else '#6366f1'}, {'#7c3aed' if theme == 'light' else '#ec4899'});
         padding: 4.5rem 2rem;
         border-radius: 16px;
         color: white;
         text-align: center;
         margin-bottom: 3.5rem;
         box-shadow: 0 12px 48px rgba(79, 70, 229, 0.18);
-    }
-    .hero h1 {
+    }}
+    .hero h1 {{
         font-size: 3.2rem;
         font-weight: 700;
         margin: 0 0 1.2rem;
         letter-spacing: -0.03em;
-    }
-    .hero p {
+    }}
+    .hero p {{
         font-size: 1.35rem;
         opacity: 0.94;
         max-width: 760px;
         margin: 0 auto;
         line-height: 1.5;
-    }
+    }}
 
-    /* Normal cards (all other pages) */
-    .card {
-        background: white;
-        border-radius: 12px;
+    /* Cards – semi-transparent in both modes */
+    .card {{
+        background: {'rgba(255, 255, 255, 0.88)' if theme == 'light' else 'rgba(30, 41, 59, 0.88)'} !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid {'rgba(255, 255, 255, 0.4)' if theme == 'light' else 'rgba(71, 85, 105, 0.5)'};
+        border-radius: 16px;
         padding: 2rem;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-        border: 1px solid #f0f0f5;
-        transition: all 0.25s ease;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
         margin-bottom: 2rem;
-    }
-    .card:hover {
+        color: {'#1e293b' if theme == 'light' else '#e2e8f0'};
+    }}
+
+    .card:hover {{
         transform: translateY(-4px);
-        box-shadow: 0 14px 36px rgba(0,0,0,0.12);
-    }
+        box-shadow: 0 14px 36px rgba(0,0,0,0.25);
+    }}
 
     /* Titles */
-    .section-title {
+    .section-title {{
         font-size: 1.85rem;
         font-weight: 700;
-        color: #111827;
+        color: {'#111827' if theme == 'light' else '#e2e8f0'};
         margin: 3rem 0 1.5rem 0;
         position: relative;
-    }
-    .section-title:after {
+    }}
+    .section-title:after {{
         content: '';
         position: absolute;
         bottom: -10px;
@@ -162,50 +151,51 @@ st.markdown("""
         height: 4px;
         background: linear-gradient(90deg, #6366f1, #a855f7);
         border-radius: 2px;
-    }
+    }}
 
     /* Badge & Keywords */
-    .badge {
+    .badge {{
         padding: 0.5rem 1.1rem;
         border-radius: 999px;
         font-size: 0.95rem;
         font-weight: 600;
         color: white;
         display: inline-block;
-    }
-    .badge.positive  { background: #10b981; }
-    .badge.negative  { background: #ef4444; }
-    .badge.neutral   { background: #f59e0b; }
+    }}
+    .badge.positive  {{ background: #10b981; }}
+    .badge.negative  {{ background: #ef4444; }}
+    .badge.neutral   {{ background: #f59e0b; }}
 
-    .keyword-row {
+    .keyword-row {{
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
         margin: 1.2rem 0;
-    }
-    .kw {
-        background: rgba(253, 224, 71, 0.4);
+    }}
+    .kw {{
+        background: {'rgba(253, 224, 71, 0.4)' if theme == 'light' else 'rgba(253, 224, 71, 0.25)'};
         padding: 5px 14px;
         border-radius: 999px;
         font-size: 0.95rem;
-    }
+        color: {'#1e293b' if theme == 'light' else '#e2e8f0'};
+    }}
 
     /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background-color: white !important;
-        border-right: 1px solid #e5e7eb;
-    }
-    .sidebar-title {
+    section[data-testid="stSidebar"] {{
+        background-color: {'white' if theme == 'light' else '#1e293b'} !important;
+        border-right: 1px solid {'#e5e7eb' if theme == 'light' else '#334155'};
+    }}
+    .sidebar-title {{
         font-size: 1.6rem;
         font-weight: 700;
-        color: #111827;
+        color: {'#111827' if theme == 'light' else '#e2e8f0'};
         margin-bottom: 2rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #e5e7eb;
-    }
+        border-bottom: 1px solid {'#e5e7eb' if theme == 'light' else '#334155'};
+    }}
 
     /* Buttons in sidebar */
-    .stButton > button {
+    .stButton > button {{
         border-radius: 10px !important;
         padding: 0.9rem 1.2rem !important;
         font-size: 1.05rem !important;
@@ -213,28 +203,26 @@ st.markdown("""
         margin-bottom: 0.6rem !important;
         transition: all 0.2s;
         text-align: left !important;
-    }
-    .stButton > button[kind="primary"] {
-        background: #6366f1 !important;
+        background: {'#6366f1' if theme == 'light' else '#6366f1'} !important;
         color: white !important;
-    }
-    .stButton > button:hover {
-        background: #f3f4f6 !important;
-    }
+    }}
+    .stButton > button:hover {{
+        background: {'#f3f4f6' if theme == 'light' else '#334155'} !important;
+    }}
 
-    .footer {
+    .footer {{
         text-align: center;
-        color: #6b7280;
+        color: {'#6b7280' if theme == 'light' else '#94a3b8'};
         font-size: 0.95rem;
         margin: 6rem 0 3rem;
         padding-top: 2.5rem;
-        border-top: 1px solid #e5e7eb;
-    }
+        border-top: 1px solid {'#e5e7eb' if theme == 'light' else '#334155'};
+    }}
 
     /* Hide broken keyboard hints */
-    .kbd, [data-testid*="kbd"], .keyboard-hint, .keyboard_* {
+    .kbd, [data-testid*="kbd"], .keyboard-hint, .keyboard_* {{
         display: none !important;
-    }
+    }}
 </style>
 """, unsafe_allow_html=True)
 
