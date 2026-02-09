@@ -697,8 +697,6 @@ End User
 ### 👥 Team & Contributors
 - **Status**: Milestone 3 Complete (All 6 Weeks)
 
-### 📝 License
-This project uses publicly available data and open-source libraries under their respective licenses (MIT, Apache 2.0, CC BY 4.0, etc.).
 
 ---
 

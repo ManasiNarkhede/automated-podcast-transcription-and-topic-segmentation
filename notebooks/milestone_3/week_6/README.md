@@ -87,13 +87,20 @@ streamlit run data/app/testing_app.py
 
 Screenshots from Week 6 testing and UI are located in `notebooks/milestone_3/week_6/screenshots/`:
 
-| Screenshot | Description |
-|---|---|
-| 📊 **dashboard.png** | QA dashboard overview |
-| 🔎 **search_topics.png** | Topic search & results interface |
-| 📋 **test_episodes1.png** | Episode list & selection view |
-| ▶️ **test_episodes2.png** | Episode playback & timeline controls |
-| 💬 **feedback.png** | User feedback entry UI |
+### QA Dashboard Overview
+![Dashboard](screenshots/dashboard.png)
+
+### Topic Search & Results Interface
+![Search Topics](screenshots/search_topics.png)
+
+### Episode List & Selection View
+![Test Episodes 1](screenshots/test_episodes1.png)
+
+### Episode Playback & Timeline Controls
+![Test Episodes 2](screenshots/test_episodes2.png)
+
+### User Feedback Entry UI
+![Feedback](screenshots/feedback.png)
 
 ---
 

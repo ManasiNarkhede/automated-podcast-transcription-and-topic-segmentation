@@ -42,14 +42,13 @@ flowchart TD
 - 🎵 **Matching audio files** legally downloaded from the official archive: https://www.thisamericanlife.org/archive
 - 🎯 **Current working subset:** 200 episodes (transcripts + downloaded MP3 audio)
 
-## 📅 Project Milestones & Timeline (8 Weeks)
+## 📅 Project Milestones & Timeline (6 Weeks - Completed)
 
-| Milestone | Weeks | Notebooks Folder | Main Deliverables |
-|-----------|-------|------------------|-------------------|
-| 1 | 1–2 | `milestone_1/` | Dataset acquisition, exploration, audio preprocessing |
-| 2 | 3–4 | `milestone_2/` | Initial transcription (Whisper), topic segmentation algorithms |
-| 3 | 5–6 | `milestone_3/` | Keyword extraction, summarization, visualizations, system testing & feedback |
-| 4 | 7–8 | `milestone_4/` | UI refinement, final documentation, presentation, deployment |
+| Milestone | Weeks | Notebooks Folder | Main Deliverables | Status |
+|-----------|-------|------------------|-------------------|--------|
+| 1 | 1–2 | `milestone_1/` | Dataset acquisition, exploration, audio preprocessing | ✅ Complete |
+| 2 | 3–4 | `milestone_2/` | Initial transcription (Whisper), topic segmentation algorithms | ✅ Complete |
+| 3 | 5–6 | `milestone_3/` | Keyword extraction, summarization, visualizations, system testing & feedback | ✅ Complete |
 
 ## 🛠️ Technologies Used
 
@@ -98,23 +97,34 @@ flowchart TD
    
 ## 📂 Project Structure
 
-
+```
 Audio Project/
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── README.md
+├── README.md                          # Main project documentation
+├── PROJECT_DOCUMENTATION.md           # Detailed week-by-week documentation
+├── requirements.txt                   # Python dependencies
+│
+├── data/                              # Data directory
+│   ├── README.md                      # Data folder documentation
 │   ├── app/
-│   │   └── podcast_navigation_app.py    (Streamlit web application)
-│   ├── audio_processed/          (Preprocessed WAV files)
-│   ├── audio_raw/                (Original podcast MP3s)
-│   ├── audio_tmp/                (Temporary audio chunks)
-│   ├── segmented_outputs/        (Topic-segmented transcripts)
-│   ├── transcripts_processed/    (Whisper-generated transcripts)
-│   ├── transcripts_raw/          (Reference transcripts)
-│   └── transcripts_raw_truncated/ (200-episode subset)
-└── notebooks/
-    ├── milestone_1/
+│   │   ├── podcast_navigation_app.py  # Main Streamlit web application
+│   │   └── testing_app.py             # Testing app for Week 6
+│   ├── audio_raw/                     # Original podcast MP3 files (200 episodes)
+│   ├── audio_processed/               # Preprocessed WAV files (normalized, cleaned)
+│   ├── audio_tmp/                     # Temporary audio chunks during processing
+│   ├── transcripts_raw/               # Original reference transcripts
+│   ├── transcripts_raw_truncated/     # 200-episode subset
+│   ├── transcripts_processed/         # Whisper-generated transcriptions with timestamps
+│   ├── episode_images/                # Episode artwork and metadata images
+│   ├── segmented_outputs/             # Topic-segmented transcripts (JSON format)
+│   │   └── episode_*.json             # Individual episode segments
+│   ├── segments_processed/            # Processed segment metadata
+│   │   └── all_segments.csv           # Aggregated segment data
+│   └── test/                          # Week 6 testing data
+│       └── segmented_outputs/
+│           └── week6_test/            # Test data for 5 new episodes
+│
+└── notebooks/                         # Jupyter notebooks for analysis & development
+    ├── milestone_1/                   # Foundation & Data Acquisition (Weeks 1-2)
     │   ├── week_1/
     │   │   ├── project_init_and_dataset_acquisition.ipynb
     │   │   └── README.md
@@ -122,30 +132,33 @@ Audio Project/
     │       ├── audio_preprocessing_and_speech_to_text.ipynb
     │       ├── transcript_quality_evaluation.ipynb
     │       └── README.md
-    ├── milestone_2/
-        │   ├── week_3/
-        │   │   ├── topic_segmentation_keyword_extraction_summarization.ipynb
-        │   │   └── README.md
-        │   └── week_4/
-        │       ├── README.md
-        │       └── screenshots/
-        │           ├── app_theme.png
-        │           ├── browse_episodes.png
-        │           ├── main_interface.png
-        │           └── search_topics.png
-        └── milestone_3/
-            ├── week_5/
-            │   ├── README.md
-            │   └── notebooks/
-            └── week_6/
-                ├── README.md
-                ├── system_testing.ipynb
-                └── screenshots/
-                    ├── dashboard.png
-                    ├── search_topics.png
-                    ├── test_episodes1.png
-                    ├── test_episodes2.png
-                    └── feedback.png
+    │
+    ├── milestone_2/                   # Core Pipeline Development (Weeks 3-4)
+    │   ├── week_3/
+    │   │   ├── topic_segmentation_keyword_extraction_summarization.ipynb
+    │   │   └── README.md
+    │   └── week_4/
+    │       ├── README.md
+    │       └── screenshots/
+    │           ├── app_theme.png
+    │           ├── browse_episodes.png
+    │           ├── main_interface.png
+    │           └── search_topics.png
+    │
+    └── milestone_3/                   # Optimization & System Testing (Weeks 5-6)
+        ├── week_5/
+        │   ├── README.md
+        │   └── notebooks/             # Optimization experiments
+        └── week_6/
+            ├── README.md
+            ├── system_testing.ipynb
+            └── screenshots/
+                ├── dashboard.png
+                ├── search_topics.png
+                ├── test_episodes1.png
+                ├── test_episodes2.png
+                └── feedback.png
+```
 
 
 ## 📈 Current Status
@@ -176,18 +189,6 @@ Audio Project/
 
 - Kaggle Dataset: https://www.kaggle.com/datasets/thedevastator/this-american-life-podcast-transcript-dataset
 - Audio Source: https://www.thisamericanlife.org (public archive)
-
----
-
-## 🎯 Week 6 Testing & Feedback
-
-Week 6 focused on **comprehensive system testing** and **user feedback collection**:
-
-- ✅ Tested system on 5 diverse new podcast episodes
-- ✅ Gathering feedback from 3–5 testers via [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeBEXeo9TC68qFct8JH0WwrxD7X2-W8zEc3iK7r9GlzOAspYQ/viewform?usp=sharing)
-- ✅ Evaluating: transcription accuracy, segmentation quality, summary clarity, keyword relevance, sentiment accuracy, UI responsiveness
-- ✅ Documenting observations and practical improvement recommendations
-- 📍 See [Week 6 README](notebooks/milestone_3/week_6/README.md) for detailed testing plan and screenshots
 
 ---
 
