@@ -28,7 +28,7 @@ flowchart TD
     F --> G[Summarization<br/>BART Model]
     G --> H[Segmented Transcripts<br/>with Topics & Summaries]
     H --> I[User Interface<br/>Navigation & Search]
-```
+
 
 ## 📊 Dataset
 
@@ -48,8 +48,8 @@ flowchart TD
 |-----------|-------|------------------|-------------------|
 | 1 | 1–2 | `milestone_1/` | Dataset acquisition, exploration, audio preprocessing |
 | 2 | 3–4 | `milestone_2/` | Initial transcription (Whisper), topic segmentation algorithms |
-| 3 | 5–6 | `milestone_3/` | Keyword extraction, summarization, visualizations |
-| 4 | 7–8 | `milestone_4/` | UI development (Streamlit), documentation, presentation |
+| 3 | 5–6 | `milestone_3/` | Keyword extraction, summarization, visualizations, system testing & feedback |
+| 4 | 7–8 | `milestone_4/` | UI refinement, final documentation, presentation, deployment |
 
 ## 🛠️ Technologies Used
 
@@ -69,12 +69,12 @@ flowchart TD
    ```bash
    python -m venv audio_project_env
    # Activate: audio_project_env\Scripts\activate (Windows) or source audio_project_env/bin/activate (Linux/Mac)
-   ```
+   
 
 3. **📦 Install Dependencies**:
    ```bash
    pip install -r requirements.txt
-   ```
+   
 
 4. **⚡ GPU Setup** (optional, recommended for faster Whisper processing):
    - Install CUDA 11.8+ if you have an NVIDIA GPU
@@ -85,20 +85,20 @@ flowchart TD
    import whisper
    import librosa
    print("Setup complete!")
-   ```
+   
 
 6. **📁 File Organization**:
-   - Raw audio: `data/audio_raw/`
-   - Processed audio: `data/audio_processed/`
-   - Transcripts: `data/transcripts_processed/`
+   - Raw audio: `data/audio_raw/
+   - Processed audio: `data/audio_processed/
+   - Transcripts: `data/transcripts_processed/
    - Notebooks: `notebooks/` directory
 7. **Run the Web App** (after completing all weeks):
    ```bash
    streamlit run data/app/podcast_navigation_app.py
-   ```
+   
 ## 📂 Project Structure
 
-```
+
 Audio Project/
 ├── README.md
 ├── requirements.txt
@@ -122,49 +122,55 @@ Audio Project/
     │       ├── audio_preprocessing_and_speech_to_text.ipynb
     │       ├── transcript_quality_evaluation.ipynb
     │       └── README.md
-    └── milestone_2/
-        ├── week_3/
-        │   ├── topic_segmentation_keyword_extraction_summarization.ipynb
-        │   └── README.md
-        └── week_4/
-            ├── README.md
-            └── screenshots/
-                ├── app_theme.png
-                ├── browse_episodes.png
-                ├── main_interface.png
-                └── search_topics.png
-```
+    ├── milestone_2/
+        │   ├── week_3/
+        │   │   ├── topic_segmentation_keyword_extraction_summarization.ipynb
+        │   │   └── README.md
+        │   └── week_4/
+        │       ├── README.md
+        │       └── screenshots/
+        │           ├── app_theme.png
+        │           ├── browse_episodes.png
+        │           ├── main_interface.png
+        │           └── search_topics.png
+        └── milestone_3/
+            ├── week_5/
+            │   ├── README.md
+            │   └── notebooks/
+            └── week_6/
+                ├── README.md
+                ├── system_testing.ipynb
+                └── screenshots/
+                    ├── dashboard.png
+                    ├── search_topics.png
+                    ├── test_episodes1.png
+                    ├── test_episodes2.png
+                    └── feedback.png
+
 
 ## 📈 Current Status
 
 ✅ **Completed:**
 - Dataset acquired: 200 episodes (transcripts + audio)
 - Environment setup completed (Python environment with GPU support)
-- Week 1: Project initialization and dataset acquisition
-- Week 2: Audio preprocessing pipeline and Whisper transcription
-- Week 3: Topic segmentation, keyword extraction, and summarization
-- Week 4: Streamlit web application for podcast navigation
+- **Week 1**: Project initialization and dataset acquisition
+- **Week 2**: Audio preprocessing pipeline and Whisper transcription
+- **Week 3**: Topic segmentation, keyword extraction, and summarization
+- **Week 4**: Streamlit web application for podcast navigation
+- **Week 5**: Advanced processing refinements and pipeline optimization
+- **Week 6**: System testing on 5 diverse episodes, structured feedback collection (3–5 testers), practical improvement recommendations
 
-🔄 **In Progress:**
-- Pipeline optimization and evaluation
-- Advanced UI features and deployment
 
 📋 **Key Achievements:**
-- Full audio preprocessing pipeline (noise reduction, normalization, chunking)
-- Whisper ASR integration with quality evaluation (WER metrics)
-- Multi-algorithm topic segmentation (TF-IDF, embeddings, LLM-based)
-- Automated keyword extraction and BART summarization
-- Interactive Streamlit web app for podcast topic navigation
-- Comprehensive documentation with visual flowcharts
+- ✨ Full audio preprocessing pipeline (noise reduction, normalization, chunking)
+- 🎙️ Whisper ASR integration with quality evaluation (WER metrics)
+- 🧠 Multi-algorithm topic segmentation (TF-IDF, embeddings, LLM-based)
+- 🏷️ Automated keyword extraction and BART summarization
+- 💬 Sentiment analysis and topic labeling
+- 🌐 Interactive Streamlit web app for podcast topic navigation
+- 📊 System testing framework with user feedback collection
+- 📚 Comprehensive documentation with visual flowcharts and screenshots
 
-## 🔮 Future Work
-
-- **⚡ Pipeline Optimization**: Performance tuning and batch processing
-- **📊 Advanced Evaluation**: Segmentation precision/recall metrics, user studies
-- **🌐 Web Interface Enhancements**: Additional features for the Streamlit app
-- **🔌 API Development**: REST endpoints for integration
-- **📝 Documentation**: Final presentation and technical write-up
-- **🚀 Deployment**: Cloud hosting and production deployment
 
 ## 📚 References
 
@@ -172,4 +178,17 @@ Audio Project/
 - Audio Source: https://www.thisamericanlife.org (public archive)
 
 ---
+
+## 🎯 Week 6 Testing & Feedback
+
+Week 6 focused on **comprehensive system testing** and **user feedback collection**:
+
+- ✅ Tested system on 5 diverse new podcast episodes
+- ✅ Gathering feedback from 3–5 testers via [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeBEXeo9TC68qFct8JH0WwrxD7X2-W8zEc3iK7r9GlzOAspYQ/viewform?usp=sharing)
+- ✅ Evaluating: transcription accuracy, segmentation quality, summary clarity, keyword relevance, sentiment accuracy, UI responsiveness
+- ✅ Documenting observations and practical improvement recommendations
+- 📍 See [Week 6 README](notebooks/milestone_3/week_6/README.md) for detailed testing plan and screenshots
+
+---
+
 

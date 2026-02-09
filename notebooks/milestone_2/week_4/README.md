@@ -34,12 +34,6 @@ In **Week 4**, we developed an interactive **Streamlit web application** that tr
 ![App Theme](screenshots/app_theme.png)
 *Clean, modern design optimized for podcast exploration*
 
-## 🎥 Demo Video
-
-🎬 **Watch the full demo**: [Podcast Navigator App Demo](https://drive.google.com/file/d/1CXpFfdLsh7aSGMGS2aZerORcdO16QZdz/view?usp=sharing)
-
-*See the app in action with real podcast data!*
-
 ## 🚀 Quick Start
 
 ### Prerequisites
