@@ -49,10 +49,10 @@ Castly has practical applications in:
 ## 3. System Architecture
 
 **System Architecture Diagram:**
-![System Architecture](notebooks/milestone_4/week_7/screenshots/system_architecture.png)
+![System Architecture](data\images\system_architecture.png)
 
 **System Flowchart:**
-![Flowchart](notebooks/milestone_4/week_7/screenshots/flowchart.png)
+![Flowchart](data\images\flowchart.png)
 
 **Stage Explanations:**
 - **Audio Preprocessing:** Cleans, normalizes, and enhances audio for optimal transcription. Includes noise reduction, loudness normalization, and format conversion.
