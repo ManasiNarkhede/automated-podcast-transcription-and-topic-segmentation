@@ -50,16 +50,6 @@
 
 ---
 
-## 📊 Current Status (Week 6)
-
-✅ System tested on 5 diverse new podcast episodes  
-✅ Feedback collected via Google Form  
-✅ Observations logged in testing log document  
-✅ Minor practical improvements proposed  
-✅ Ready for final presentation and documentation  
-
----
-
 ## 🚀 How to Run Week 6 Testing App
 
 ### Step 1: Process New Test Episodes
@@ -79,30 +69,6 @@ streamlit run data/app/testing_app.py
 - 📝 Record detailed observations in the text area  
 - 📤 Share the **feedback form** link with testers  
 - 📊 Review responses as they come in
-
----
-
-## 📸 Screenshots
-
-Screenshots from Week 6 testing and UI are located in `notebooks/milestone_3/week_6/screenshots/`:
-
-### Dark Mode UI
-![Dark Mode](screenshots/dark_mode.png)
-
-### QA Dashboard Overview
-![Dashboard](screenshots/dashboard.png)
-
-### Topic Search & Results Interface
-![Search Topics](screenshots/search_topics.png)
-
-### Episode List & Selection View
-![Test Episodes 1](screenshots/test_episodes1.png)
-
-### Episode Playback & Timeline Controls
-![Test Episodes 2](screenshots/test_episodes2.png)
-
-### User Feedback Entry UI
-![Feedback](screenshots/feedback.png)
 
 ---
 

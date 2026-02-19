@@ -20,49 +20,51 @@ long-form audio into structured, searchable, and insight-rich segments.
 
 ## 🧠 System Architecture
 
-``` mermaid
+```mermaid
 flowchart TD
     A[Upload Audio File] --> B[Whisper Transcription]
     B --> C[Language Detection]
     C --> D[Sentence Tokenization]
-    D --> E[Romanization (if non-English)]
-    E --> F[Sentence Embeddings]
-    F --> G[Semantic Segmentation]
-    G --> H[Summary Generation]
-    G --> I[Keyword Extraction]
-    G --> J[Sentiment Analysis]
-    H --> K[Segment DataFrame]
-    I --> K
-    J --> K
-    K --> L[Search Interface]
-    K --> M[Browse Timeline]
-    K --> N[Segment Audio Playback]
+    D --> E{Language<br/>== English?}
+    E -->|No| F[Romanization]
+    E -->|Yes| G[Sentence Embeddings]
+    F --> G
+    G --> H[Semantic Segmentation]
+    H --> I[Summary Generation]
+    H --> J[Keyword Extraction]
+    H --> K[Sentiment Analysis]
+    I --> L[Segment DataFrame]
+    J --> L
+    K --> L
+    L --> M[Search Interface]
+    L --> N[Browse Timeline]
+    L --> O[Segment Audio Playback]
 ```
 
 ------------------------------------------------------------------------
 ## 🖥️ Application Screenshots
 
 ### Podcast Topic Navigator
-![Home](notebooks\milestone_4\week_7\screenshots\home.png)
+![Home](screenshots/home.png)
 
 ### Upload & Processing
-![Upload Audio](notebooks\milestone_4\week_7\screenshots\upload_audio.png)
+![Upload Audio](screenshots/upload_audio.png)
 
 ### Search Segments
-![Search Segments](notebooks\milestone_4\week_7\screenshots\search_segments.png)
+![Search Segments](screenshots/search_segments.png)
 
 ### Browse & Timeline View
-![Browse Segments](notebooks\milestone_4\week_7\screenshots\browse_segments1.png)
-(notebooks\milestone_4\week_7\screenshots\browse_segments1.png)
+![Browse Segments](screenshots/browse_segments1.png)
+(screenshots/browse_segments2.png)
 
 ### Library(This American Life Podcasts)
-![Library](notebooks\milestone_4\week_7\screenshots\library.png)
+![Library](screenshots/library.png)
 
 ### Dark Mode
-![Dark Mode](screenshots/test_episodes2.png)
+![Dark Mode](screenshots/dark_mode.png)
 
-### Multilingual + Romanization Demo
-![Multilingual](notebooks\milestone_4\week_7\screenshots\multilingual.png)
+### Multilingual + Romanization 
+![Multilingual](screenshots/multilingual.png)
 
 ---------------
 ## 🧩 Core Features
