@@ -49,10 +49,10 @@ Castly has practical applications in:
 ## 3. System Architecture
 
 **System Architecture Diagram:**
-![System Architecture](data\images\system_architecture.png)
+![System Architecture](data/images/system_architecture.png)
 
 **System Flowchart:**
-![Flowchart](data\images\flowchart.png)
+![Flowchart](data/images/flowchart.png)
 
 **Stage Explanations:**
 - **Audio Preprocessing:** Cleans, normalizes, and enhances audio for optimal transcription. Includes noise reduction, loudness normalization, and format conversion.
@@ -231,8 +231,13 @@ Audio Project/
 **Dark Mode:**
 ![Dark Mode](notebooks/milestone_4/week_7/screenshots/dark_mode.png)
 
-**Multilingual + Romanization:**
+**Language Detection:**
 ![Multilingual](notebooks/milestone_4/week_7/screenshots/multilingual.png)
+
+
+### Demo Video
+
+[Watch the demo video here](https://drive.google.com/file/d/1S7TCsPshDCHtUamc3o5SC7VI84SssIJH/view?usp=drive_link)
 
 ---
 
@@ -240,7 +245,7 @@ Audio Project/
 
 ### Episode Testing Results
 
-| # | Episode File / Title | Duration | # Segments | Transcription Quality (1–5) | Segmentation Quality (1–5) | Avg. Sentiment Score | Avg. Unique Keywords per Segment | Key Observations / Issues Found | Corrective Action / Note |
+| SrNo. | Episode File / Title | Duration | Segments | Transcription Quality (1–5) | Segmentation Quality (1–5) | Avg. Sentiment Score | Avg. Unique Keywords per Segment | Key Observations / Issues Found | Corrective Action / Note |
 |---|----------------------|----------|------------|-----------------------------|----------------------------|----------------------|-------------------------------|-------------------------------|-------------------------|
 | 1 | 201.mp3 – This American Life: Will Arnett (FULL EPISODE) \| Conan O'Brien | 59:04 | 12 | 4.6 | 4.2 | +0.28 | 8.4 | Clean interview audio, good topic breaks at guest changes | Very good result – strong baseline |
 | 2 | 202.mp3 – Will Arnett (FULL EPISODE) \| Conan O'Brien | 68:29 | 15 | 4.4 | 4.0 | +0.35 | 9.1 | Humorous tone → laughter caused minor word errors | Acceptable – laughter not critical |
@@ -264,8 +269,6 @@ Audio Project/
 | Average sentiment score | +0.119 | Mild positive bias (common in storytelling & self-improvement podcasts) |
 | Average unique keywords per seg | 8.54 | Useful for search & word cloud visualization |
 | Overall success rate | ~94% | 9/10 episodes processed smoothly; 1 had moderate audio challenges |
-
-   
 
 ### Feedback Summary
 
@@ -309,8 +312,7 @@ Audio Project/
 5. Plan for multi-language support.
 
 **Feedback was collected via Google Form:**
-[Podcast Topic Navigator Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSeBEXeo9TC68qFct8JH0WwrxD7X2-W8zEc3iK7r9GlzOAspYQ/
-viewform?usp=sharing)
+[Podcast Topic Navigator Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSeBEXeo9TC68qFct8JH0WwrxD7X2-W8zEc3iK7r9GlzOAspYQ/viewform?usp=sharing)
 
 ### Updates Made Based on User Feedback
 
